@@ -11,23 +11,51 @@ Markdown isn’t just text. It's a source of structured information.
 
 Agnostic. Versatile. Generic.
 
-## Examples
+## Examples in the Node environment
 
 example.md
 ```text
 
+This is the *introduction*.
 
-# Title
+# Part One
 
-Hello *world*!
+Bla bla.
+
+## *Title*
+
+1, 2, 3.
+
+### Chapter
+
+A, B, C.
+
+###### Section
+
+i, ii, iii.
+
+A code example with `#` characters..
+
+```python
+
+# This is a comment
+def reread():
+    print("Detect patterns.")
+
+```
+
+# **Part** *Two*
+## Another Title
+
+Last but not least.
+
 ```
 
 ```javascript
-
+import { readFileSync } from 'node:fs';
 import {reread} from "reread-markdown"
 
-// Load the *example.md* into the *text* variable.
-// text = ...
+const text = readFileSync("./example.md", "utf8")
 
 console.log(reread(text).toJSON())
 
@@ -39,19 +67,64 @@ Output
   "data": {
     "title": "",
     "depth": 0,
-    "contents": "\n\n"
+    "contents": "\nThis is the *introduction*.\n\n"
   },
   "children": [
     {
       "data": {
-        "title": "# Title",
+        "title": "# Part One",
         "depth": 1,
-        "contents": "\n\nHello *world*!"
+        "contents": "\n\nBla bla.\n\n"
       },
-      "children": []
+      "children": [
+        {
+          "data": {
+            "title": "## *Title*",
+            "depth": 2,
+            "contents": "\n\n1, 2, 3.\n\n"
+          },
+          "children": [
+            {
+              "data": {
+                "title": "### Chapter",
+                "depth": 3,
+                "contents": "\n\nA, B, C.\n\n"
+              },
+              "children": [
+                {
+                  "data": {
+                    "title": "###### Section",
+                    "depth": 6,
+                    "contents": "\n\ni, ii, iii.\n\nA code example with `#` characters..\n\n```python\n\n# This is a comment\ndef reread():\n    print(\"Detect patterns.\")\n\n```\n\n"
+                  },
+                  "children": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "data": {
+        "title": "# **Part** *Two*",
+        "depth": 1,
+        "contents": "\n"
+      },
+      "children": [
+        {
+          "data": {
+            "title": "## Another Title",
+            "depth": 2,
+            "contents": "\n\nLast but not least.\n"
+          },
+          "children": []
+        }
+      ]
     }
   ]
 }
+
 ```
 
 
