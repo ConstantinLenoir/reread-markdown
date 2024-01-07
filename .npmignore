@@ -1,0 +1,3 @@
+tests
+*.log
+rollup.config.js

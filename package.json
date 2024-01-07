@@ -1,0 +1,27 @@
+{
+  "name": "reread-markdown",
+  "version": "1.0.0",
+  "description": "A Markdown parser for extracting hierarchical information.",
+  "main": "./src/index.js",
+  "exports": "./src/index.js",
+  "scripts": {
+    "test": "mocha --recursive \"./tests/node/test*.js\"",
+    "testBrowser": "source tests/browsers/test.sh",
+    "testNodePackage": "source tests/test_package.sh"
+  },
+  "type": "module",
+  "author": "Constantin Lenoir",
+  "license": "MIT",
+  "dependencies": {
+    "mdast-util-from-markdown": "^2.0.0",
+    "mdast-util-to-string": "^4.0.0"
+  },
+  "devDependencies": {
+    "@rollup/plugin-node-resolve": "^15.2.3",
+    "chai": "^5.0.0",
+    "http-server": "^14.1.1",
+    "mocha": "^10.2.0",
+    "rollup": "^4.9.2",
+    "unist-util-inspect": "^8.0.0"
+  }
+}

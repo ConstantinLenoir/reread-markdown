@@ -1,0 +1,17 @@
+{
+  "data": {
+    "title": "",
+    "depth": 0,
+    "contents": "\n\n"
+  },
+  "children": [
+    {
+      "data": {
+        "title": "# Title",
+        "depth": 1,
+        "contents": "\n\nHello *world*!"
+      },
+      "children": []
+    }
+  ]
+}

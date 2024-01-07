@@ -1,0 +1,18 @@
+{
+  "data": { "title": [], "depth": 0, "contents": [] },
+  "children": [
+    {
+      "data": {
+        "title": [{ "text": "Title", "labels": ["root", "heading"] }],
+        "depth": 1,
+        "contents": [
+          { "text": "", "labels": ["root", "newParagraph"] },
+          { "text": "Hello ", "labels": ["root", "paragraph"] },
+          { "text": "world", "labels": ["root", "paragraph", "emphasis"] },
+          { "text": "!", "labels": ["root", "paragraph"] }
+        ]
+      },
+      "children": []
+    }
+  ]
+}

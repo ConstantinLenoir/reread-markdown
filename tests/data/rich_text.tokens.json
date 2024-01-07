@@ -1,0 +1,102 @@
+{
+  "data": { "title": [], "depth": 0, "contents": [] },
+  "children": [
+    {
+      "data": {
+        "title": [
+          { "text": "My ", "labels": ["root", "heading"] },
+          { "text": "Title", "labels": ["root", "heading", "emphasis"] }
+        ],
+        "depth": 1,
+        "contents": [
+          { "text": "", "labels": ["root", "newParagraph"] },
+          { "text": "A ", "labels": ["root", "paragraph"] },
+          {
+            "text": "word",
+            "labels": ["root", "paragraph", "emphasis", "strong"]
+          },
+          { "text": ".", "labels": ["root", "paragraph"] },
+          { "text": "", "labels": ["root", "newParagraph"] },
+          { "text": "Another paragraph.", "labels": ["root", "paragraph"] },
+          { "text": "", "labels": ["root", "newList"] },
+          { "text": "", "labels": ["root", "list", "newListItem"] },
+          {
+            "text": "",
+            "labels": ["root", "list", "listItem", "newParagraph"]
+          },
+          {
+            "text": "An ",
+            "labels": ["root", "list", "listItem", "paragraph"]
+          },
+          {
+            "text": "item",
+            "labels": [
+              "root",
+              "list",
+              "listItem",
+              "paragraph",
+              "emphasis",
+              "strong"
+            ]
+          },
+          { "text": ".", "labels": ["root", "list", "listItem", "paragraph"] },
+          { "text": "", "labels": ["root", "list", "newListItem"] },
+          {
+            "text": "",
+            "labels": ["root", "list", "listItem", "newParagraph"]
+          },
+          {
+            "text": "Another item.",
+            "labels": ["root", "list", "listItem", "paragraph"]
+          },
+          { "text": "", "labels": ["root", "list", "listItem", "newList"] },
+          {
+            "text": "",
+            "labels": ["root", "list", "listItem", "list", "newListItem"]
+          },
+          {
+            "text": "",
+            "labels": [
+              "root",
+              "list",
+              "listItem",
+              "list",
+              "listItem",
+              "newParagraph"
+            ]
+          },
+          {
+            "text": "Nested item.",
+            "labels": [
+              "root",
+              "list",
+              "listItem",
+              "list",
+              "listItem",
+              "paragraph"
+            ]
+          }
+        ]
+      },
+      "children": [
+        {
+          "data": {
+            "title": [{ "text": "Section", "labels": ["root", "heading"] }],
+            "depth": 3,
+            "contents": [
+              { "text": "", "labels": ["root", "newParagraph"] },
+              { "text": "A ", "labels": ["root", "paragraph"] },
+              {
+                "text": "link",
+                "labels": ["root", "paragraph", "link"],
+                "url": "https://github.com/syntax-tree/mdast"
+              },
+              { "text": ".", "labels": ["root", "paragraph"] }
+            ]
+          },
+          "children": []
+        }
+      ]
+    }
+  ]
+}

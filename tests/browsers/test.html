@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Mocha Tests</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../../node_modules/mocha/mocha.css" />
+  </head>
+  <body>
+    <div id="mocha"></div>
+    <script src="../../node_modules/chai/chai.js" type="module"></script>
+    <script src="../../node_modules/mocha/mocha.js"></script>
+    <script src="reread-markdown.js"></script>
+
+    <script class="mocha-init">
+      mocha.setup({
+        allowUncaught: true,
+        ui: "bdd",
+      });
+      mocha.checkLeaks();
+    </script>
+    <script type="module" src="./test_reread.js"></script>
+    <script type="module" src="./test_tree.js"></script>
+    <script type="module" src="./test_parser.js"></script>
+
+    <script class="mocha-exec">
+      mocha.run();
+    </script>
+  </body>
+</html>

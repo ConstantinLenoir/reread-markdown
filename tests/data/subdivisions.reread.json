@@ -1,0 +1,61 @@
+{
+  "data": {
+    "title": "",
+    "depth": 0,
+    "contents": "\nThis is the *introduction*.\n\n"
+  },
+  "children": [
+    {
+      "data": {
+        "title": "# Part One",
+        "depth": 1,
+        "contents": "\n\nBla bla.\n\n"
+      },
+      "children": [
+        {
+          "data": {
+            "title": "## *Title*",
+            "depth": 2,
+            "contents": "\n\n1, 2, 3.\n\n"
+          },
+          "children": [
+            {
+              "data": {
+                "title": "### Chapter",
+                "depth": 3,
+                "contents": "\n\nA, B, C.\n\n"
+              },
+              "children": [
+                {
+                  "data": {
+                    "title": "###### Section",
+                    "depth": 6,
+                    "contents": "\n\ni, ii, iii.\n\nA code example with `#` characters..\n\n```python\n\n# This is a comment\ndef reread():\n    print(\"Detect patterns.\")\n\n```\n\n"
+                  },
+                  "children": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "data": {
+        "title": "# **Part** *Two*",
+        "depth": 1,
+        "contents": "\n"
+      },
+      "children": [
+        {
+          "data": {
+            "title": "## Another Title",
+            "depth": 2,
+            "contents": "\n\nLast but not least.\n"
+          },
+          "children": []
+        }
+      ]
+    }
+  ]
+}
