@@ -11,6 +11,124 @@ Markdown isn’t just text. It's a source of structured information.
 
 Agnostic. Versatile. Generic.
 
+## Examples in the Node environment
+
+example.md
+
+    This is the *introduction*.
+
+    # Part One
+
+    Bla bla.
+
+    ## *Title*
+
+    1, 2, 3.
+
+    ### Chapter
+
+    A, B, C.
+
+    ###### Section
+
+    i, ii, iii.
+
+    A code example with `#` characters..
+
+    ```python
+
+    # This is a comment
+    def reread():
+        print("Detect patterns.")
+
+    ```
+
+    # **Part** *Two*
+    ## Another Title
+
+    Last but not least.
+    
+
+
+Code example
+
+```javascript
+import { readFileSync } from 'node:fs';
+import {reread} from "reread-markdown"
+
+const text = readFileSync("./example.md", "utf8")
+
+console.log(reread(text).toJSON())
+
+```
+
+Output
+```json
+{
+  "data": {
+    "title": "",
+    "depth": 0,
+    "contents": "\nThis is the *introduction*.\n\n"
+  },
+  "children": [
+    {
+      "data": {
+        "title": "# Part One",
+        "depth": 1,
+        "contents": "\n\nBla bla.\n\n"
+      },
+      "children": [
+        {
+          "data": {
+            "title": "## *Title*",
+            "depth": 2,
+            "contents": "\n\n1, 2, 3.\n\n"
+          },
+          "children": [
+            {
+              "data": {
+                "title": "### Chapter",
+                "depth": 3,
+                "contents": "\n\nA, B, C.\n\n"
+              },
+              "children": [
+                {
+                  "data": {
+                    "title": "###### Section",
+                    "depth": 6,
+                    "contents": "\n\ni, ii, iii.\n\nA code example with `#` characters..\n\n```python\n\n# This is a comment\ndef reread():\n    print(\"Detect patterns.\")\n\n```\n\n"
+                  },
+                  "children": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "data": {
+        "title": "# **Part** *Two*",
+        "depth": 1,
+        "contents": "\n"
+      },
+      "children": [
+        {
+          "data": {
+            "title": "## Another Title",
+            "depth": 2,
+            "contents": "\n\nLast but not least.\n"
+          },
+          "children": []
+        }
+      ]
+    }
+  ]
+}
+
+```
+
+
 ## Workflow
 
 1. *mdast-util-from-markdown* is used for parsing the input Markdown text. The resulting *syntax tree* complies with the specification defined by [mdast](https://github.com/syntax-tree/mdast).
