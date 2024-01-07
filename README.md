@@ -14,42 +14,40 @@ Agnostic. Versatile. Generic.
 ## Examples in the Node environment
 
 example.md
-```text
 
-This is the *introduction*.
+    This is the *introduction*.
 
-# Part One
+    # Part One
 
-Bla bla.
+    Bla bla.
 
-## *Title*
+    ## *Title*
 
-1, 2, 3.
+    1, 2, 3.
 
-### Chapter
+    ### Chapter
 
-A, B, C.
+    A, B, C.
 
-###### Section
+    ###### Section
 
-i, ii, iii.
+    i, ii, iii.
 
-A code example with `#` characters..
+    A code example with `#` characters..
 
-```python
+    ```python
 
-# This is a comment
-def reread():
-    print("Detect patterns.")
+    # This is a comment
+    def reread():
+        print("Detect patterns.")
 
-```
+    ```
 
-# **Part** *Two*
-## Another Title
+    # **Part** *Two*
+    ## Another Title
 
-Last but not least.
-
-```
+    Last but not least.
+    
 
 ```javascript
 import { readFileSync } from 'node:fs';
