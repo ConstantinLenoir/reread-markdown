@@ -49,6 +49,9 @@ example.md
     Last but not least.
     
 
+
+Code example
+
 ```javascript
 import { readFileSync } from 'node:fs';
 import {reread} from "reread-markdown"
