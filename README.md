@@ -1,7 +1,7 @@
 
 # reread-markdown
 
-To turn markdown files into structured, queryable data. The input Markdown file is transformed into a special tree exposing the structure intended by the author of the file.
+To turn markdown files into structured, queryable data. The input Markdown file is transformed into a special tree exposing the structure intended by the author of the file: the table of contents (TOC). For each key (heading) in the TOC, you get both the title and the related contents under this title. You don't only get titles. Then, you can easily extract whole parts of the original document.
 
 
 Markdown isn’t just text. It's a source of structured information.
@@ -135,6 +135,14 @@ Output
 2. This syntax tree is visited (walked, traversed, crawled) by a *Visitor* object accumulating state in order to produce a new tree.
 3. This new tree allows you to **reread** Markdown (AST transformation). It exposes the hierarchical structure of the document and enables you to extract parts for further processing.
 4. You can optionally retrieve each part in the form of a list of *tokens*. Tokens are labelled fragments of text (strings of characters). They are suitable for natural language processing (NLP) or PDF generation.
+
+## Related Projects
+
+There is a similar service in **Visual Studio Code** (range folding).
+- https://github.com/microsoft/vscode-markdown-languageservice
+- https://github.com/microsoft/vscode-markdown-languageservice/blob/main/src/tableOfContents.ts
+
+VS Code uses an alternative technique for getting the same result. No tree traversal. VS Code uses *markdown-it*. Headers are first extracted with location and depth information. The resulting list of size *n* is scanned *n* times for extracting the hierarchical information...
 
 
 ## About Markdown
