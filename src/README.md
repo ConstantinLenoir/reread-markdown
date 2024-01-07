@@ -46,6 +46,10 @@ src/index.js https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modul
 
 ## Potential improvements
 
+Improve release managing.
+
+Improve package.json. SEE best practices. The "module" entry...
+
 https://github.com/motdotla/dotenv
 
 Add methods on the three returned by reread().

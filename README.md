@@ -11,6 +11,50 @@ Markdown isn’t just text. It's a source of structured information.
 
 Agnostic. Versatile. Generic.
 
+## Examples
+
+example.md
+```text
+
+
+# Title
+
+Hello *world*!
+```
+
+```javascript
+
+import {reread} from "reread-markdown"
+
+// Load the *example.md* into the *text* variable.
+// text = ...
+
+console.log(reread(text).toJSON())
+
+```
+
+Output
+```json
+{
+  "data": {
+    "title": "",
+    "depth": 0,
+    "contents": "\n\n"
+  },
+  "children": [
+    {
+      "data": {
+        "title": "# Title",
+        "depth": 1,
+        "contents": "\n\nHello *world*!"
+      },
+      "children": []
+    }
+  ]
+}
+```
+
+
 ## Workflow
 
 1. *mdast-util-from-markdown* is used for parsing the input Markdown text. The resulting *syntax tree* complies with the specification defined by [mdast](https://github.com/syntax-tree/mdast).
