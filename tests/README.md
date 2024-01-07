@@ -2,6 +2,8 @@
 
 # Test Best Practices
 
+Tests aka specifications.
+
 Surprisingly, you don't need to import *describe()* and *it()* for using them in tests with Mocha... Global variables? Mocha's documentation could be richer...
 
 Tests should be run over the "compiled" (bundled, transpiled, packaged) software in a production-like environment. The paths you import in test code should be the same as the paths the users will use... Tests are parts of the documentation.

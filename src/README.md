@@ -46,6 +46,12 @@ src/index.js https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modul
 
 ## Potential improvements
 
+
+Search Markdown repositories with the query `markdown extract`.
+
+**Extract code blocks.**
+Literary programming. Extract and execute code blocks. Markdown notebooks... https://github.com/earldouglas/codedown/
+
 Improve release managing.
 
 Improve package.json. SEE best practices. The "module" entry...
@@ -76,6 +82,11 @@ Represent node name as enum-like items.
 A protective level of indirection in case of name changes.
 
 Using various selectors for querying a tree-like objects (keys). CSS-like selectors or JSONPath.
+```javascript
+- document["Part Two"]["Chapter One"]("intro")
+- document["Part Two"]["Chapter One"]("all")
+- document(query("Blabla"))
+```
 
 https://stackoverflow.com/a/76348306
 
