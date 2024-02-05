@@ -18,5 +18,6 @@ python3 tests/transform_package_json.py < package.json > $TEST_DIR/package.json
 cd $TEST_DIR
 npm install ./$package_file_name
 exec 1>&7 2>&1 7>&-
-npm test | tee -a $TEST_OUTPUT
+# Only the Node environment.
+npm run testNode | tee -a $TEST_OUTPUT
 cd $OLDPWD
