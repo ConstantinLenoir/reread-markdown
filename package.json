@@ -5,7 +5,8 @@
   "main": "./src/index.js",
   "exports": "./src/index.js",
   "scripts": {
-    "test": "mocha --recursive \"./tests/node/test*.js\"",
+    "test": "npm run testNode && npm run testBrowser",
+    "testNode": "mocha --recursive \"./tests/node/test*.js\"",
     "testBrowser": "source tests/browsers/test.sh",
     "testNodePackage": "source tests/test_package.sh"
   },

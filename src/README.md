@@ -127,3 +127,22 @@ Docutils is a modular system for processing documentation into useful formats, s
 JSON.stringify(tree, null, 2)
 
 console.dir(tree, { depth: 7 })
+
+```javascript
+class Token {
+    /**
+    * Flyweight
+    */
+  constructor({ text = "", labels = [] } = {}) {
+    this.text = text;
+    this.labels = labels;
+  }
+  /**
+   * Create a token from a syntax tree node.
+   * 
+   */
+  static fromSTNode(node, ancestors) 
+  //...
+    return new Token()
+}
+```

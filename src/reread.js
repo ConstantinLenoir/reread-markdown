@@ -168,23 +168,9 @@ class TokenVisitor extends Visitor {
   }
 
   updateTokens(nodeIn, ancestors) {
-    if (nodeIn.type === "text") {
-      const labels = ancestors.map((ancestor) => ancestor.type);
-      let text = this.normalizeText
-        ? this.removeSpaces(nodeIn.value)
-        : nodeIn.value;
-      let newToken = { text: text, labels };
-      if (labels.includes("link")) {
-        const linkNode = ancestors.find((node) => node.type === "link");
-        newToken.url = linkNode.url;
-      }
-      this.tokens.push(newToken);
-    } else if (Parser.layoutTypes.includes(nodeIn.type)) {
-      const labels = ancestors.map((ancestor) => ancestor.type);
-      this.tokens.push({
-        text: "",
-        labels: [...labels, `new${this.capitalizeFirstLetter(nodeIn.type)}`],
-      });
+    const token = node2Token(nodeIn, ancestors, this.normalizeText);
+    if (token) {
+      this.tokens.push(token);
     }
   }
 
@@ -212,15 +198,53 @@ class TokenVisitor extends Visitor {
   finalizeVisit() {
     this.updateCurrNodeOut(null);
   }
-  /**
-   * To comply with the Mardown specification, space characters must be
-   * processed specifically.
-   */
-  removeSpaces(text) {
-    return text.replace(/[\n|\r\n]+/g, " ").replace(/[ ]{2,}/g, " ");
-  }
+}
 
-  capitalizeFirstLetter(s) {
-    return s ? `${s[0].toUpperCase()}${s.substring(1)}` : s;
+/**
+ * To comply with the Markdown specification, space characters must be
+ * processed specifically.
+ */
+function removeSpaces(text) {
+  return text.replace(/[\n|\r\n]+/g, " ").replace(/[ ]{2,}/g, " ");
+}
+
+function capitalizeFirstLetter(s) {
+  return s ? `${s[0].toUpperCase()}${s.substring(1)}` : s;
+}
+
+function node2Token(nodeIn, ancestors, normalizeText = false) {
+  let newToken = null;
+  if (nodeIn.type === "text") {
+    const labels = ancestors.map((ancestor) => ancestor.type);
+    let text = normalizeText ? removeSpaces(nodeIn.value) : nodeIn.value;
+    newToken = { text: text, labels };
+    if (labels.includes("link")) {
+      const linkNode = ancestors.find((node) => node.type === "link");
+      newToken.url = linkNode.url;
+    }
+  } else if (Parser.layoutTypes.includes(nodeIn.type)) {
+    const labels = ancestors.map((ancestor) => ancestor.type);
+    newToken = {
+      text: "",
+      labels: [...labels, `new${capitalizeFirstLetter(nodeIn.type)}`],
+    };
   }
+  return newToken;
+}
+
+export function md2Tokens(text) {
+  class MyVisitor {
+    constructor() {
+      this.tokens = [];
+    }
+    visit(node, ancestors) {
+      let token = node2Token(node, ancestors);
+      if (token) this.tokens.push(token);
+    }
+    depart(node, ancestors) {}
+  }
+  let sTree = Parser.parse(text);
+  let visitor = new MyVisitor();
+  Tree.visit(sTree, sTree, visitor, Parser.getChildren);
+  return visitor.tokens;
 }

@@ -59,7 +59,7 @@ In these situations, it’s much easier to debug the original source, rather tha
 https://github.com/mochajs/mocha/wiki
 
 
-Paywright or Selenium or Cypress?
+Paywright or Selenium or **Cypress**?
 
 https://github.com/mochajs/mocha-examples
 
